@@ -18,32 +18,32 @@ const GallerySection = () => {
     {
       id: 1,
       src: gallery1,
-      caption: language === 'fr' ? 'Configuration réseau' : 'Network Configuration',
+      caption: language === 'fr' ? 'Câblage baie de brassage' : 'Patch Panel Cabling',
     },
     {
       id: 2,
       src: gallery2,
-      caption: language === 'fr' ? 'Projet IoT Arduino' : 'Arduino IoT Project',
+      caption: language === 'fr' ? 'Soudure fibre optique' : 'Fiber Optic Splicing',
     },
     {
       id: 3,
       src: gallery3,
-      caption: language === 'fr' ? 'Travail en équipe' : 'Team Work',
+      caption: language === 'fr' ? 'Travail sur site' : 'On-Site Work',
     },
     {
       id: 4,
       src: gallery4,
-      caption: language === 'fr' ? 'Présentation de projet' : 'Project Presentation',
+      caption: language === 'fr' ? 'Installation tableau électrique' : 'Electrical Panel Installation',
     },
     {
       id: 5,
       src: gallery5,
-      caption: language === 'fr' ? 'Câblage fibre optique' : 'Fiber Optic Cabling',
+      caption: language === 'fr' ? 'Chantier câblage' : 'Cabling Site',
     },
     {
       id: 6,
       src: gallery6,
-      caption: language === 'fr' ? 'Test de capteurs' : 'Sensor Testing',
+      caption: language === 'fr' ? 'Travaux électriques' : 'Electrical Work',
     },
   ];
 

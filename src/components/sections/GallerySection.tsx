@@ -23,17 +23,17 @@ const GallerySection = () => {
     {
       id: 2,
       src: gallery2,
-      caption: language === 'fr' ? 'Soudure fibre optique' : 'Fiber Optic Splicing',
+      caption: language === 'fr' ? 'Câblage de panneau' : 'Panel Cabling',
     },
     {
       id: 3,
       src: gallery3,
-      caption: language === 'fr' ? 'Travail sur site' : 'On-Site Work',
+      caption: language === 'fr' ? 'Dépannage de caméra de surveillance' : 'Security Camera Troubleshooting',
     },
     {
       id: 4,
       src: gallery4,
-      caption: language === 'fr' ? 'Installation tableau électrique' : 'Electrical Panel Installation',
+      caption: language === 'fr' ? "Câblage d'armoire de contrôle d'accès" : 'Access Control Cabinet Cabling',
     },
     {
       id: 5,
@@ -43,7 +43,7 @@ const GallerySection = () => {
     {
       id: 6,
       src: gallery6,
-      caption: language === 'fr' ? 'Travaux électriques' : 'Electrical Work',
+      caption: language === 'fr' ? 'Utilisation de perceuse' : 'Using a Drill',
     },
   ];
 

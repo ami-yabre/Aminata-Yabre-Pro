@@ -12,10 +12,10 @@ const Footer = () => {
           className="flex flex-col md:flex-row items-center justify-between gap-4 text-primary-foreground/60"
         >
           <p className="text-sm">
-            © {new Date().getFullYear()} Marie Dupont. Tous droits réservés.
+            © {new Date().getFullYear()} Aminata Yabre. Tous droits réservés.
           </p>
           <p className="text-sm flex items-center gap-1">
-            Fait avec <Heart className="w-4 h-4 text-cyan fill-cyan" /> à Paris
+            Fait avec <Heart className="w-4 h-4 text-cyan fill-cyan" /> à Montbéliard
           </p>
         </motion.div>
       </div>

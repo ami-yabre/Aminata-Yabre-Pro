@@ -20,7 +20,7 @@ const translations = {
     
     // Hero
     'hero.greeting': 'Bonjour, je suis',
-    'hero.name': 'Marie Dupont',
+    'hero.name': 'Aminata YABRE',
     'hero.title': 'Étudiante en BUT Réseaux & Télécommunications',
     'hero.subtitle': 'Option Internet des Objets',
     'hero.cta': 'Découvrir mon profil',
@@ -31,7 +31,7 @@ const translations = {
     'about.subtitle': 'Recherche d\'alternance',
     'about.description': 'Passionnée par les réseaux et l\'IoT, je suis actuellement à la recherche d\'une alternance pour mettre en pratique mes compétences techniques. Mon objectif est de contribuer à des projets innovants dans le domaine des télécommunications et des objets connectés.',
     'about.looking': 'Je recherche une alternance à partir de septembre 2026 pour une durée de 12 mois.',
-    'about.availability': 'Disponible en région Île-de-France',
+    'about.availability': 'Disponible à Montbéliard, France',
     
     // Skills
     'skills.title': 'Compétences',
@@ -41,9 +41,9 @@ const translations = {
     'skills.telecom': 'Télécommunications',
     'skills.telecom.desc': 'Transmission de données, fibre optique, technologies mobiles (4G/5G)',
     'skills.systems': 'Systèmes',
-    'skills.systems.desc': 'Administration Linux/Windows, virtualisation, Docker, scripting Bash/Python',
+    'skills.systems.desc': 'Administration Linux/Windows',
     'skills.iot': 'Internet des Objets',
-    'skills.iot.desc': 'Arduino, Raspberry Pi, capteurs, protocoles MQTT, LoRaWAN',
+    'skills.iot.desc': 'Arduino, Raspberry Pi, protocoles MQTT',
     
     // Projects
     'projects.title': 'Projets',
@@ -78,7 +78,7 @@ const translations = {
     
     // Hero
     'hero.greeting': 'Hello, I am',
-    'hero.name': 'Marie Dupont',
+    'hero.name': 'Aminata YABRE',
     'hero.title': 'Networks & Telecommunications Student',
     'hero.subtitle': 'Internet of Things Specialization',
     'hero.cta': 'Discover my profile',
@@ -89,7 +89,7 @@ const translations = {
     'about.subtitle': 'Looking for an Apprenticeship',
     'about.description': 'Passionate about networks and IoT, I am currently seeking an apprenticeship to put my technical skills into practice. My goal is to contribute to innovative projects in telecommunications and connected devices.',
     'about.looking': 'I am looking for an apprenticeship starting September 2026 for a duration of 12 months.',
-    'about.availability': 'Available in the Île-de-France region',
+    'about.availability': 'Available in Montbéliard, France',
     
     // Skills
     'skills.title': 'Skills',
@@ -99,9 +99,9 @@ const translations = {
     'skills.telecom': 'Telecommunications',
     'skills.telecom.desc': 'Data transmission, fiber optics, mobile technologies (4G/5G)',
     'skills.systems': 'Systems',
-    'skills.systems.desc': 'Linux/Windows administration, virtualization, Docker, Bash/Python scripting',
+    'skills.systems.desc': 'Linux/Windows administration',
     'skills.iot': 'Internet of Things',
-    'skills.iot.desc': 'Arduino, Raspberry Pi, sensors, MQTT protocols, LoRaWAN',
+    'skills.iot.desc': 'Arduino, Raspberry Pi, MQTT protocols',
     
     // Projects
     'projects.title': 'Projects',

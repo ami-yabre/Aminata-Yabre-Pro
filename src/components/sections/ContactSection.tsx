@@ -29,8 +29,8 @@ const ContactSection = () => {
   };
 
   const contactInfo = [
-    { icon: Mail, label: 'marie.dupont@email.com', href: 'mailto:marie.dupont@email.com' },
-    { icon: Phone, label: '+33 6 12 34 56 78', href: 'tel:+33612345678' },
+    { icon: Mail, label: 'yabreami5418@gmail.com', href: 'mailto:yabreami5418@gmail.com' },
+    { icon: Phone, label: '+33 6 52 76 67 95', href: 'tel:+33652766795' },
     { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com' },
     { icon: Github, label: 'GitHub', href: 'https://github.com' },
   ];

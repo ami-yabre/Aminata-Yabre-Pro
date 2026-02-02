@@ -19,7 +19,6 @@ const translations = {
     'nav.contact': 'Contact',
     
     // Hero
-    'hero.greeting': 'Bonjour, je suis',
     'hero.name': 'Aminata YABRE',
     'hero.title': 'Étudiante en BUT Réseaux & Télécommunications',
     'hero.subtitle': 'Option Internet des Objets',
@@ -29,7 +28,7 @@ const translations = {
     // About
     'about.title': 'À propos',
     'about.subtitle': 'Recherche d\'alternance',
-    'about.description': 'Passionnée par les réseaux et l\'IoT, je suis actuellement à la recherche d\'une alternance pour mettre en pratique mes compétences techniques. Mon objectif est de contribuer à des projets innovants dans le domaine des télécommunications et des objets connectés.',
+    'about.description': 'Formation technique approfondie en réseaux, télécommunications et internet des objets.',
     'about.looking': 'Je recherche une alternance à partir de septembre 2026 pour une durée de 12 mois.',
     'about.availability': 'Disponible à Montbéliard, France',
     
@@ -77,7 +76,6 @@ const translations = {
     'nav.contact': 'Contact',
     
     // Hero
-    'hero.greeting': 'Hello, I am',
     'hero.name': 'Aminata YABRE',
     'hero.title': 'Networks & Telecommunications Student',
     'hero.subtitle': 'Internet of Things Specialization',
@@ -87,7 +85,7 @@ const translations = {
     // About
     'about.title': 'About',
     'about.subtitle': 'Looking for an Apprenticeship',
-    'about.description': 'Passionate about networks and IoT, I am currently seeking an apprenticeship to put my technical skills into practice. My goal is to contribute to innovative projects in telecommunications and connected devices.',
+    'about.description': 'In-depth technical training in networks, telecommunications and internet of things.',
     'about.looking': 'I am looking for an apprenticeship starting September 2026 for a duration of 12 months.',
     'about.availability': 'Available in Montbéliard, France',
     

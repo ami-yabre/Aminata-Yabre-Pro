@@ -48,7 +48,7 @@ const Header = () => {
           className="text-xl font-bold text-gradient"
           whileHover={{ scale: 1.05 }}
         >
-          MD
+          AY
         </motion.a>
 
         {/* Desktop Navigation */}

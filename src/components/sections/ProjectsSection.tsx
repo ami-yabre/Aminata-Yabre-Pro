@@ -1,47 +1,28 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Button } from '@/components/ui/button';
+import minecraftIotImage from '@/assets/minecraft-iot.png';
 
 const ProjectsSection = () => {
   const { t, language } = useLanguage();
 
   const projects = [
     {
-      title: language === 'fr' ? 'Réseau d\'entreprise simulé' : 'Simulated Enterprise Network',
+      title: language === 'fr' ? 'Développer une application communicante' : 'Developing a Communicating Application',
       description: language === 'fr' 
-        ? 'Configuration complète d\'un réseau d\'entreprise avec VLANs, routage inter-VLAN, et sécurité périmétrique.'
-        : 'Complete enterprise network configuration with VLANs, inter-VLAN routing, and perimeter security.',
-      technologies: ['Cisco', 'VLAN', 'OSPF', 'ACL'],
-      type: language === 'fr' ? 'Projet scolaire' : 'Academic Project',
-      image: '/placeholder.svg',
+        ? 'Conception d\'une application client-serveur permettant de créer un compte, se connecter, ajouter des amis, créer ou rejoindre des groupes et échanger des messages. Projet réalisé en équipe avec répartition des rôles entre front-end, back-end et conception du protocole applicatif.'
+        : 'Design of a client-server application allowing users to create accounts, login, add friends, create or join groups and exchange messages. Team project with role distribution between front-end, back-end and application protocol design.',
+      technologies: ['Client-Serveur', 'Protocole', 'Travail d\'équipe'],
+      type: language === 'fr' ? 'Projet académique (SAE)' : 'Academic Project (SAE)',
+      image: null,
     },
     {
-      title: language === 'fr' ? 'Station météo IoT' : 'IoT Weather Station',
+      title: language === 'fr' ? 'Jeu Minecraft Multijoueur IoT avec ESP8266 et MQTT' : 'Multiplayer Minecraft IoT Game with ESP8266 and MQTT',
       description: language === 'fr'
-        ? 'Station météo connectée avec capteurs, transmission LoRaWAN et dashboard web temps réel.'
-        : 'Connected weather station with sensors, LoRaWAN transmission and real-time web dashboard.',
-      technologies: ['Arduino', 'LoRaWAN', 'MQTT', 'Node.js'],
-      type: language === 'fr' ? 'Projet personnel' : 'Personal Project',
-      image: '/placeholder.svg',
-    },
-    {
-      title: language === 'fr' ? 'Serveur de supervision' : 'Monitoring Server',
-      description: language === 'fr'
-        ? 'Déploiement d\'une infrastructure de monitoring réseau avec Zabbix et Grafana sur Docker.'
-        : 'Deployment of a network monitoring infrastructure with Zabbix and Grafana on Docker.',
-      technologies: ['Docker', 'Zabbix', 'Grafana', 'Linux'],
-      type: language === 'fr' ? 'Projet scolaire' : 'Academic Project',
-      image: '/placeholder.svg',
-    },
-    {
-      title: language === 'fr' ? 'Système domotique' : 'Home Automation System',
-      description: language === 'fr'
-        ? 'Système domotique complet avec Raspberry Pi, contrôle vocal et application mobile.'
-        : 'Complete home automation system with Raspberry Pi, voice control and mobile app.',
-      technologies: ['Raspberry Pi', 'Python', 'MQTT', 'React Native'],
-      type: language === 'fr' ? 'Projet personnel' : 'Personal Project',
-      image: '/placeholder.svg',
+        ? 'Projet reliant des dispositifs IoT à Minecraft via MQTT. Les joueurs portent des gants équipés de boutons-poussoirs connectés à un ESP8266 déclenchant des super-pouvoirs et des malus dans le jeu grâce à des scripts Python sur Raspberry Pi.'
+        : 'Project connecting IoT devices to Minecraft via MQTT. Players wear gloves equipped with push buttons connected to an ESP8266, triggering superpowers and penalties in the game through Python scripts on Raspberry Pi.',
+      technologies: ['ESP8266', 'MQTT', 'Raspberry Pi', 'Python'],
+      type: language === 'fr' ? 'Projet académique' : 'Academic Project',
+      image: minecraftIotImage,
     },
   ];
 
@@ -71,9 +52,17 @@ const ProjectsSection = () => {
               className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300"
             >
               <div className="aspect-video bg-secondary relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-cyan/20 flex items-center justify-center">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-cyan opacity-50 blur-xl group-hover:scale-150 transition-transform duration-500" />
-                </div>
+                {project.image ? (
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-cyan/20 flex items-center justify-center">
+                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-cyan opacity-50 blur-xl group-hover:scale-150 transition-transform duration-500" />
+                  </div>
+                )}
                 <span className="absolute top-4 left-4 px-3 py-1 text-xs font-medium rounded-full bg-white/90 text-foreground">
                   {project.type}
                 </span>
@@ -83,9 +72,9 @@ const ProjectsSection = () => {
                 <h3 className="text-xl font-bold mb-3 group-hover:text-gradient transition-all">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground mb-4">{project.description}</p>
+                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">{project.description}</p>
                 
-                <div className="flex flex-wrap gap-2 mb-5">
+                <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
@@ -94,17 +83,6 @@ const ProjectsSection = () => {
                       {tech}
                     </span>
                   ))}
-                </div>
-
-                <div className="flex gap-3">
-                  <Button variant="outline" size="sm" className="flex-1">
-                    <Github className="w-4 h-4 mr-2" />
-                    Code
-                  </Button>
-                  <Button size="sm" className="flex-1 bg-primary hover:bg-primary/90">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    {t('projects.view')}
-                  </Button>
                 </div>
               </div>
             </motion.div>

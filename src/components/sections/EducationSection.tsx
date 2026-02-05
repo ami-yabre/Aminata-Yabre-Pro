@@ -8,22 +8,32 @@ const EducationSection = () => {
   const education = [
     {
       degree: 'BUT Réseaux et Télécommunications',
-      specialization: language === 'fr' ? 'Option Internet des Objets' : 'Internet of Things Specialization',
-      school: 'IUT de Paris - Rives de Seine',
-      period: '2024 - 2027',
+      specialization: '',
+      school: 'IUT Nord Franche-Comté / Montbéliard, France',
+      period: '2025 - 2027',
       description: language === 'fr'
-        ? 'Formation technique approfondie en réseaux, télécommunications et systèmes embarqués avec spécialisation IoT.'
-        : 'In-depth technical training in networks, telecommunications and embedded systems with IoT specialization.',
+        ? 'Formation technique approfondie en réseaux, télécommunications et systèmes embarqués.'
+        : 'In-depth technical training in networks, telecommunications and embedded systems.',
       current: true,
     },
     {
-      degree: 'Baccalauréat STI2D',
-      specialization: language === 'fr' ? 'Spécialité SIN (Systèmes d\'Information et Numérique)' : 'Digital Information Systems Specialty',
-      school: 'Lycée Technique XYZ',
-      period: '2021 - 2024',
+      degree: 'BTS Réseaux et Télécommunications',
+      specialization: '',
+      school: 'Institut De Formation Sainte Marie / Abidjan, Côte D\'Ivoire',
+      period: '2022 - 2023',
       description: language === 'fr'
-        ? 'Formation scientifique et technologique avec option numérique et programmation.'
-        : 'Scientific and technological training with digital and programming option.',
+        ? 'Formation en réseaux et télécommunications.'
+        : 'Networks and telecommunications training.',
+      current: false,
+    },
+    {
+      degree: language === 'fr' ? 'Baccalauréat Série Scientifique D' : 'Scientific Baccalaureate Series D',
+      specialization: '',
+      school: 'Groupe Scolaire Mark Ange / Soubré, Côte D\'Ivoire',
+      period: '2020 - 2021',
+      description: language === 'fr'
+        ? 'Formation scientifique générale.'
+        : 'General scientific education.',
       current: false,
     },
   ];

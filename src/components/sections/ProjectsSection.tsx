@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import minecraftIotImage from '@/assets/minecraft-iot.png';
+import appCommunicanteImage from '@/assets/app-communicante.jpg';
 
 const ProjectsSection = () => {
   const { t, language } = useLanguage();
@@ -13,7 +14,7 @@ const ProjectsSection = () => {
         : 'Design of a client-server application allowing users to create accounts, login, add friends, create or join groups and exchange messages. Team project with role distribution between front-end, back-end and application protocol design.',
       technologies: ['Client-Serveur', 'Protocole', 'Travail d\'équipe'],
       type: language === 'fr' ? 'Projet académique (SAE)' : 'Academic Project (SAE)',
-      image: null,
+      image: appCommunicanteImage,
     },
     {
       title: language === 'fr' ? 'Jeu Minecraft Multijoueur IoT avec ESP8266 et MQTT' : 'Multiplayer Minecraft IoT Game with ESP8266 and MQTT',

@@ -1,10 +1,16 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, Download } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
+import type { SectionKey } from '@/pages/Index';
 
-const Header = () => {
+interface HeaderProps {
+  activeSection: SectionKey;
+  setActiveSection: (section: SectionKey) => void;
+}
+
+const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
   const { language, setLanguage, t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -17,21 +23,20 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { key: 'nav.about', href: '#about' },
-    { key: 'nav.skills', href: '#skills' },
-    { key: 'nav.projects', href: '#projects' },
-    { key: 'nav.education', href: '#education' },
-    { key: 'nav.gallery', href: '#gallery' },
-    { key: 'nav.contact', href: '#contact' },
+  const navItems: { key: string; section: SectionKey }[] = [
+    { key: 'nav.about', section: 'about' },
+    { key: 'nav.skills', section: 'skills' },
+    { key: 'nav.experience', section: 'experience' },
+    { key: 'nav.projects', section: 'projects' },
+    { key: 'nav.education', section: 'education' },
+    { key: 'nav.gallery', section: 'gallery' },
+    { key: 'nav.contact', section: 'contact' },
   ];
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleNavClick = (section: SectionKey) => {
+    setActiveSection(section);
     setIsMobileMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -39,32 +44,45 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass shadow-card py-3' : 'py-5'
+        isScrolled ? 'glass shadow-card py-3' : 'glass py-4'
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <motion.a
-          href="#"
+        <motion.button
+          onClick={() => handleNavClick('hero')}
           className="text-xl font-bold text-gradient"
           whileHover={{ scale: 1.05 }}
         >
           AY
-        </motion.a>
+        </motion.button>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
             <button
               key={item.key}
-              onClick={() => scrollToSection(item.href)}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              onClick={() => handleNavClick(item.section)}
+              className={`text-sm font-medium transition-colors ${
+                activeSection === item.section
+                  ? 'text-primary'
+                  : 'text-foreground/80 hover:text-primary'
+              }`}
             >
               {t(item.key)}
             </button>
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
+          {/* CV Download Button */}
+          <Button
+            size="sm"
+            className="bg-cyan hover:bg-cyan-light text-navy font-semibold"
+          >
+            <Download className="w-4 h-4" />
+            <span className="hidden sm:inline">{t('hero.cv')}</span>
+          </Button>
+
           {/* Language Switcher */}
           <Button
             variant="ghost"
@@ -100,8 +118,12 @@ const Header = () => {
             {navItems.map((item) => (
               <button
                 key={item.key}
-                onClick={() => scrollToSection(item.href)}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors text-left py-2"
+                onClick={() => handleNavClick(item.section)}
+                className={`text-sm font-medium transition-colors text-left py-2 ${
+                  activeSection === item.section
+                    ? 'text-primary'
+                    : 'text-foreground/80 hover:text-primary'
+                }`}
               >
                 {t(item.key)}
               </button>

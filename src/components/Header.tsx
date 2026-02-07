@@ -3,14 +3,8 @@ import { motion } from 'framer-motion';
 import { Menu, X, Globe, Download } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import type { SectionKey } from '@/pages/Index';
 
-interface HeaderProps {
-  activeSection: SectionKey;
-  setActiveSection: (section: SectionKey) => void;
-}
-
-const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
+const Header = () => {
   const { language, setLanguage, t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -23,20 +17,22 @@ const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems: { key: string; section: SectionKey }[] = [
-    { key: 'nav.about', section: 'about' },
-    { key: 'nav.skills', section: 'skills' },
-    { key: 'nav.experience', section: 'experience' },
-    { key: 'nav.projects', section: 'projects' },
-    { key: 'nav.education', section: 'education' },
-    { key: 'nav.gallery', section: 'gallery' },
-    { key: 'nav.contact', section: 'contact' },
+  const navItems = [
+    { key: 'nav.about', href: '#about' },
+    { key: 'nav.skills', href: '#skills' },
+    { key: 'nav.experience', href: '#experience' },
+    { key: 'nav.projects', href: '#projects' },
+    { key: 'nav.education', href: '#education' },
+    { key: 'nav.gallery', href: '#gallery' },
+    { key: 'nav.contact', href: '#contact' },
   ];
 
-  const handleNavClick = (section: SectionKey) => {
-    setActiveSection(section);
+  const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const el = document.querySelector(href);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -49,7 +45,7 @@ const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <motion.button
-          onClick={() => handleNavClick('hero')}
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="text-xl font-bold text-gradient"
           whileHover={{ scale: 1.05 }}
         >
@@ -61,12 +57,8 @@ const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
           {navItems.map((item) => (
             <button
               key={item.key}
-              onClick={() => handleNavClick(item.section)}
-              className={`text-sm font-medium transition-colors ${
-                activeSection === item.section
-                  ? 'text-primary'
-                  : 'text-foreground/80 hover:text-primary'
-              }`}
+              onClick={() => handleNavClick(item.href)}
+              className="text-sm font-medium transition-colors text-foreground/80 hover:text-primary"
             >
               {t(item.key)}
             </button>
@@ -74,7 +66,6 @@ const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
         </nav>
 
         <div className="flex items-center gap-2">
-          {/* CV Download Button */}
           <Button
             size="sm"
             className="bg-cyan hover:bg-cyan-light text-navy font-semibold"
@@ -83,7 +74,6 @@ const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
             <span className="hidden sm:inline">{t('hero.cv')}</span>
           </Button>
 
-          {/* Language Switcher */}
           <Button
             variant="ghost"
             size="sm"
@@ -94,7 +84,6 @@ const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
             <span className="uppercase font-medium">{language}</span>
           </Button>
 
-          {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="icon"
@@ -106,7 +95,6 @@ const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       {isMobileMenuOpen && (
         <motion.nav
           initial={{ opacity: 0, height: 0 }}
@@ -118,12 +106,8 @@ const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
             {navItems.map((item) => (
               <button
                 key={item.key}
-                onClick={() => handleNavClick(item.section)}
-                className={`text-sm font-medium transition-colors text-left py-2 ${
-                  activeSection === item.section
-                    ? 'text-primary'
-                    : 'text-foreground/80 hover:text-primary'
-                }`}
+                onClick={() => handleNavClick(item.href)}
+                className="text-sm font-medium transition-colors text-left py-2 text-foreground/80 hover:text-primary"
               >
                 {t(item.key)}
               </button>

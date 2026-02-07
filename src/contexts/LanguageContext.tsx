@@ -29,7 +29,7 @@ const translations = {
     // About
     'about.title': 'À propos',
     'about.subtitle': 'Recherche d\'alternance',
-    'about.description': 'Actuellement étudiante en Réseaux & Télécommunications, je m\'intéresse aux architectures réseau, à l\'IoT et aux systèmes connectés. Je cherche une alternance pour la rentrée septembre 2026 pour mettre en pratique mes compétences en configuration et en réseaux.',
+    'about.description': 'Étudiante en Réseaux et Télécommunications, passionnée par les systèmes informatiques et les réseaux. J\'ai acquis une première expérience en tant que technicienne réseaux lors d\'un stage en entreprise, où j\'ai travaillé sur le câblage, l\'installation et les tests de connectivité. Je recherche actuellement une alternance pour la rentrée de septembre 2026 afin de renforcer mes compétences techniques et professionnelles.',
     
     // Skills
     'skills.title': 'Compétences',
@@ -85,7 +85,7 @@ const translations = {
     // About
     'about.title': 'About',
     'about.subtitle': 'Looking for an Apprenticeship',
-    'about.description': 'Currently a Networks & Telecommunications student, I am interested in network architectures, IoT and connected systems. I am looking for an apprenticeship starting September 2026 to put my configuration and networking skills into practice.',
+    'about.description': 'Networks and Telecommunications student, passionate about IT systems and networks. I gained first-hand experience as a network technician during a company internship, where I worked on cabling, installation and connectivity testing. I am currently looking for an apprenticeship starting September 2026 to strengthen my technical and professional skills.',
     
     // Skills
     'skills.title': 'Skills',

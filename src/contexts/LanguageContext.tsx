@@ -13,6 +13,7 @@ const translations = {
     // Navigation
     'nav.about': 'À propos',
     'nav.skills': 'Compétences',
+    'nav.experience': 'Expérience',
     'nav.projects': 'Projets',
     'nav.education': 'Formation',
     'nav.gallery': 'Galerie',
@@ -28,9 +29,7 @@ const translations = {
     // About
     'about.title': 'À propos',
     'about.subtitle': 'Recherche d\'alternance',
-    'about.description': 'Formation technique approfondie en réseaux, télécommunications et internet des objets.',
-    'about.looking': 'Je recherche une alternance à partir de septembre 2026 pour une durée de 12 mois.',
-    'about.availability': 'Disponible à Montbéliard, France',
+    'about.description': 'Actuellement étudiante en Réseaux & Télécommunications, je m\'intéresse aux architectures réseau, à l\'IoT et aux systèmes connectés. Je cherche une alternance pour la rentrée septembre 2026 pour mettre en pratique mes compétences en configuration et en réseaux.',
     
     // Skills
     'skills.title': 'Compétences',
@@ -70,6 +69,7 @@ const translations = {
     // Navigation
     'nav.about': 'About',
     'nav.skills': 'Skills',
+    'nav.experience': 'Experience',
     'nav.projects': 'Projects',
     'nav.education': 'Education',
     'nav.gallery': 'Gallery',
@@ -85,9 +85,7 @@ const translations = {
     // About
     'about.title': 'About',
     'about.subtitle': 'Looking for an Apprenticeship',
-    'about.description': 'In-depth technical training in networks, telecommunications and internet of things.',
-    'about.looking': 'I am looking for an apprenticeship starting September 2026 for a duration of 12 months.',
-    'about.availability': 'Available in Montbéliard, France',
+    'about.description': 'Currently a Networks & Telecommunications student, I am interested in network architectures, IoT and connected systems. I am looking for an apprenticeship starting September 2026 to put my configuration and networking skills into practice.',
     
     // Skills
     'skills.title': 'Skills',

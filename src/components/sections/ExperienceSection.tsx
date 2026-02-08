@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { Briefcase, Calendar, MapPin, CheckCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import experienceBaie1 from '@/assets/experience-baie-1.jpg';
+import experienceBaie2 from '@/assets/experience-baie-2.jpg';
 
 const ExperienceSection = () => {
   const { language } = useLanguage();
@@ -101,6 +103,37 @@ const ExperienceSection = () => {
                     <span className="text-sm text-foreground/80">{task}</span>
                   </motion.div>
                 ))}
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <h4 className="font-semibold mb-4 text-lg">
+                {language === 'fr' ? 'Montage de baie informatique' : 'IT rack assembly'}
+              </h4>
+              <p className="text-sm text-muted-foreground mb-4">
+                {language === 'fr' 
+                  ? 'Montage de baie informatique et préparation pour l\'installation des équipements réseau'
+                  : 'IT rack assembly and preparation for network equipment installation'}
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4 }}
+                  className="rounded-xl overflow-hidden"
+                >
+                  <img src={experienceBaie1} alt="Montage de baie informatique" className="w-full h-64 object-cover" />
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.1 }}
+                  className="rounded-xl overflow-hidden"
+                >
+                  <img src={experienceBaie2} alt="Préparation installation réseau" className="w-full h-64 object-cover" />
+                </motion.div>
               </div>
             </div>
           </motion.div>

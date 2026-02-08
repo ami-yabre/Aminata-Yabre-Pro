@@ -3,6 +3,10 @@ import { Briefcase, Calendar, MapPin, CheckCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import experienceBaie1 from '@/assets/experience-baie-1.jpg';
 import experienceBaie2 from '@/assets/experience-baie-2.jpg';
+import experienceCablage1 from '@/assets/experience-cablage-1.jpg';
+import experienceCablage2 from '@/assets/experience-cablage-2.jpg';
+import experienceCablage3 from '@/assets/experience-cablage-3.jpg';
+import experienceCablage4 from '@/assets/experience-cablage-4.jpg';
 
 const ExperienceSection = () => {
   const { language } = useLanguage();
@@ -134,7 +138,36 @@ const ExperienceSection = () => {
                 >
                   <img src={experienceBaie2} alt="Préparation installation réseau" className="w-full h-64 object-cover" />
                 </motion.div>
+            </div>
+
+            <div className="mt-8">
+              <h4 className="font-semibold mb-4 text-lg">
+                {language === 'fr' ? 'Câblage et brassage' : 'Cabling and patching'}
+              </h4>
+              <div className="flex flex-col md:flex-row gap-6 items-start">
+                <div className="flex-1">
+                  <p className="text-foreground/80 leading-relaxed">
+                    {language === 'fr'
+                      ? "Durant mon stage, j'ai été amenée à réaliser plusieurs tâches techniques, notamment le tirage de câbles, puis le câblage et le brassage des panneaux de brassage. Ces opérations nécessitent la maîtrise des codes couleurs afin d'assurer une installation réseau conforme et fonctionnelle."
+                      : "During my internship, I carried out several technical tasks, including cable pulling, then cabling and patching of patch panels. These operations require mastery of color codes to ensure a compliant and functional network installation."}
+                  </p>
+                </div>
+                <div className="flex-1 grid grid-cols-2 gap-3">
+                  {[experienceCablage1, experienceCablage2, experienceCablage3, experienceCablage4].map((img, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: i * 0.1 }}
+                      className="rounded-xl overflow-hidden"
+                    >
+                      <img src={img} alt={`Câblage et brassage ${i + 1}`} className="w-full h-40 object-cover" />
+                    </motion.div>
+                  ))}
+                </div>
               </div>
+            </div>
             </div>
           </motion.div>
         </div>

@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, Download } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
+import heroPortrait from '@/assets/hero-portrait.png';
 
 const HeroSection = () => {
   const { t } = useLanguage();
+  const [isFlipped, setIsFlipped] = useState(false);
 
   const scrollToAbout = () => {
     const element = document.querySelector('#about');
@@ -39,63 +42,114 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center max-w-4xl mx-auto"
-        >
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6"
-          >
-            {t('hero.name')}
-          </motion.h1>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 max-w-5xl mx-auto">
           
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="text-xl md:text-2xl text-primary-foreground/80 mb-2"
-          >
-            {t('hero.title')}
-          </motion.p>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="text-lg text-cyan font-medium mb-10"
-          >
-            {t('hero.subtitle')}
-          </motion.p>
-
+          {/* Magic Card */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="perspective-[1000px] cursor-pointer"
+            onClick={() => setIsFlipped(!isFlipped)}
+            onMouseEnter={() => setIsFlipped(true)}
+            onMouseLeave={() => setIsFlipped(false)}
           >
-            <Button
-              size="lg"
-              onClick={scrollToAbout}
-              className="bg-cyan hover:bg-cyan-light text-navy font-semibold px-8 py-6 text-lg"
+            <motion.div
+              animate={{ rotateY: isFlipped ? 180 : 0 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+              className="relative w-64 h-80 md:w-72 md:h-96"
+              style={{ transformStyle: 'preserve-3d' }}
             >
-              {t('hero.cta')}
-              <ArrowDown className="ml-2 w-5 h-5" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 px-8 py-6 text-lg"
-            >
-              {t('hero.cv')}
-              <Download className="ml-2 w-5 h-5" />
-            </Button>
+              {/* Front of card */}
+              <div
+                className="absolute inset-0 rounded-2xl overflow-hidden border-2 border-cyan/40 shadow-glow"
+                style={{ backfaceVisibility: 'hidden' }}
+              >
+                <img
+                  src={heroPortrait}
+                  alt="Portrait"
+                  className="w-full h-full object-cover object-top"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-0 right-0 text-center">
+                  <p className="text-cyan text-sm font-mono tracking-widest uppercase">✦ Portfolio ✦</p>
+                </div>
+              </div>
+
+              {/* Back of card */}
+              <div
+                className="absolute inset-0 rounded-2xl overflow-hidden border-2 border-cyan/40 shadow-glow bg-navy flex flex-col items-center justify-center p-6 text-center"
+                style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+              >
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(187_92%_41%/0.1),transparent_70%)]" />
+                <p className="text-cyan font-mono text-4xl mb-4">✦</p>
+                <h3 className="text-primary-foreground text-xl font-bold mb-2">{t('hero.name')}</h3>
+                <p className="text-cyan text-sm font-medium mb-4">{t('hero.title')}</p>
+                <p className="text-primary-foreground/60 text-xs font-mono">{t('hero.subtitle')}</p>
+                <p className="text-cyan font-mono text-4xl mt-4">✦</p>
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
+
+          {/* Text content */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center md:text-left"
+          >
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6"
+            >
+              {t('hero.name')}
+            </motion.h1>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="text-xl md:text-2xl text-primary-foreground/80 mb-2"
+            >
+              {t('hero.title')}
+            </motion.p>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="text-lg text-cyan font-medium mb-10"
+            >
+              {t('hero.subtitle')}
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+            >
+              <Button
+                size="lg"
+                onClick={scrollToAbout}
+                className="bg-cyan hover:bg-cyan-light text-navy font-semibold px-8 py-6 text-lg"
+              >
+                {t('hero.cta')}
+                <ArrowDown className="ml-2 w-5 h-5" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 px-8 py-6 text-lg"
+              >
+                {t('hero.cv')}
+                <Download className="ml-2 w-5 h-5" />
+              </Button>
+            </motion.div>
+          </motion.div>
+        </div>
       </div>
 
       {/* Scroll indicator */}

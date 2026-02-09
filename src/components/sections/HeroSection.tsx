@@ -47,8 +47,18 @@ const HeroSection = () => {
           {/* Magic Card */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            animate={{ 
+              opacity: 1, 
+              x: [0, 15, -15, 10, -10, 0],
+              y: [0, -10, 5, -5, 8, 0],
+              rotateZ: [0, 3, -3, 2, -2, 0],
+            }}
+            transition={{ 
+              opacity: { duration: 0.8, delay: 0.2 },
+              x: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 },
+              y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 },
+              rotateZ: { duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 },
+            }}
             className="perspective-[1000px] cursor-pointer"
             onClick={() => setIsFlipped(!isFlipped)}
             onMouseEnter={() => setIsFlipped(true)}

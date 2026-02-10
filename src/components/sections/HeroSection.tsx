@@ -51,8 +51,6 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="perspective-[1000px] cursor-pointer"
             onClick={() => setIsFlipped(!isFlipped)}
-            onMouseEnter={() => setIsFlipped(true)}
-            onMouseLeave={() => setIsFlipped(false)}
           >
             <motion.div
               animate={{ rotateY: isFlipped ? 180 : 0 }}

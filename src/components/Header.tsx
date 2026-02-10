@@ -21,7 +21,7 @@ const Header = () => {
     { key: 'nav.about', href: '#about' },
     
     { key: 'nav.experience', href: '#experience' },
-    { key: 'nav.projects', href: '#projects' },
+    { key: 'nav.portfolio', href: '#projects' },
     { key: 'nav.education', href: '#education' },
     
     { key: 'nav.contact', href: '#contact' },
@@ -31,7 +31,9 @@ const Header = () => {
     setIsMobileMenuOpen(false);
     const el = document.querySelector(href);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      const headerHeight = 80;
+      const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: elementPosition - headerHeight, behavior: 'smooth' });
     }
   };
 

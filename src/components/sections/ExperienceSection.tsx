@@ -115,6 +115,34 @@ const ExperienceSection = () => {
               </div>
             </div>
 
+            {/* Chantier - image LEFT, text RIGHT */}
+            <div className="mt-8">
+              <h4 className="font-semibold mb-4 text-lg">
+                {language === 'fr' ? 'Chantier d\'infrastructure' : 'Infrastructure construction site'}
+              </h4>
+              <div className="flex flex-col md:flex-row gap-6 items-start">
+                <div className="flex-1">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4 }}
+                    className="rounded-xl overflow-hidden cursor-pointer"
+                    onClick={() => setSelectedImage(experienceChantier1)}
+                  >
+                    <img src={experienceChantier1} alt="Chantier infrastructure" className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300" />
+                  </motion.div>
+                </div>
+                <div className="flex-1">
+                  <p className="text-foreground/80 leading-relaxed">
+                    {language === 'fr'
+                      ? "Cette expérience de stage sur un chantier de grande envergure m'a permis de comprendre, pour mener à bien un projet d'infrastructure, tout commence par une mise en place rigoureuse de la « tuyauterie ». C'est l'étape primordiale pour garantir un résultat final propre. Anticiper le passage des gaines permet d'impressionner le client avec une installation invisible, où aucun câble ne traîne, alliant ainsi performance technique et esthétique parfaite."
+                      : "This internship experience on a large-scale construction site taught me that to successfully complete an infrastructure project, everything starts with a rigorous setup of the 'piping'. This is the essential step to guarantee a clean final result. Anticipating conduit routing impresses the client with an invisible installation where no cable is left exposed, combining technical performance with perfect aesthetics."}
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* Montage de baie - images LEFT, text RIGHT */}
             <div className="mt-8">
               <h4 className="font-semibold mb-4 text-lg">
@@ -200,34 +228,6 @@ const ExperienceSection = () => {
                     {language === 'fr'
                       ? "Dans mon stage je ne faisais pas que du câblage réseau mais un peu de sécurité informatique. Ici, je procédais au dépannage et à la configuration de caméras IP afin de rétablir leur fonctionnement et la connexion au réseau."
                       : "During my internship, I didn't only do network cabling but also some IT security work. Here, I was troubleshooting and configuring IP cameras to restore their operation and network connection."}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Chantier - image LEFT, text RIGHT */}
-            <div className="mt-8">
-              <h4 className="font-semibold mb-4 text-lg">
-                {language === 'fr' ? 'Chantier d\'infrastructure' : 'Infrastructure construction site'}
-              </h4>
-              <div className="flex flex-col md:flex-row gap-6 items-start">
-                <div className="flex-1">
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4 }}
-                    className="rounded-xl overflow-hidden cursor-pointer"
-                    onClick={() => setSelectedImage(experienceChantier1)}
-                  >
-                    <img src={experienceChantier1} alt="Chantier infrastructure" className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300" />
-                  </motion.div>
-                </div>
-                <div className="flex-1">
-                  <p className="text-foreground/80 leading-relaxed">
-                    {language === 'fr'
-                      ? "Cette expérience de stage sur un chantier de grande envergure m'a permis de comprendre, pour mener à bien un projet d'infrastructure, tout commence par une mise en place rigoureuse de la « tuyauterie ». C'est l'étape primordiale pour garantir un résultat final propre. Anticiper le passage des gaines permet d'impressionner le client avec une installation invisible, où aucun câble ne traîne, alliant ainsi performance technique et esthétique parfaite."
-                      : "This internship experience on a large-scale construction site taught me that to successfully complete an infrastructure project, everything starts with a rigorous setup of the 'piping'. This is the essential step to guarantee a clean final result. Anticipating conduit routing impresses the client with an invisible installation where no cable is left exposed, combining technical performance with perfect aesthetics."}
                   </p>
                 </div>
               </div>

@@ -37,7 +37,7 @@ const ProjectsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">{t('projects.title')}</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">{language === 'fr' ? 'Portfolio' : 'Portfolio'}</h2>
           <p className="text-xl text-muted-foreground">{t('projects.subtitle')}</p>
         </motion.div>
 

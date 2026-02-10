@@ -19,11 +19,11 @@ const Header = () => {
 
   const navItems = [
     { key: 'nav.about', href: '#about' },
-    { key: 'nav.skills', href: '#skills' },
+    
     { key: 'nav.experience', href: '#experience' },
     { key: 'nav.projects', href: '#projects' },
     { key: 'nav.education', href: '#education' },
-    { key: 'nav.gallery', href: '#gallery' },
+    
     { key: 'nav.contact', href: '#contact' },
   ];
 
@@ -68,10 +68,13 @@ const Header = () => {
         <div className="flex items-center gap-2">
           <Button
             size="sm"
+            asChild
             className="bg-cyan hover:bg-cyan-light text-navy font-semibold"
           >
-            <Download className="w-4 h-4" />
-            <span className="hidden sm:inline">{t('hero.cv')}</span>
+            <a href="/Aminata-Yabre-CV.pdf" download>
+              <Download className="w-4 h-4" />
+              <span className="hidden sm:inline">{t('hero.cv')}</span>
+            </a>
           </Button>
 
           <Button

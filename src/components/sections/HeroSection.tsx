@@ -47,18 +47,8 @@ const HeroSection = () => {
           {/* Magic Card */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
-            animate={{ 
-              opacity: 1, 
-              x: [0, 15, -15, 10, -10, 0],
-              y: [0, -10, 5, -5, 8, 0],
-              rotateZ: [0, 3, -3, 2, -2, 0],
-            }}
-            transition={{ 
-              opacity: { duration: 0.8, delay: 0.2 },
-              x: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 },
-              y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 },
-              rotateZ: { duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 },
-            }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="perspective-[1000px] cursor-pointer"
             onClick={() => setIsFlipped(!isFlipped)}
             onMouseEnter={() => setIsFlipped(true)}
@@ -151,11 +141,13 @@ const HeroSection = () => {
               </Button>
               <Button
                 size="lg"
-                variant="outline"
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 px-8 py-6 text-lg"
+                asChild
+                className="bg-gradient-to-r from-primary to-cyan text-white font-semibold px-8 py-6 text-lg hover:opacity-90"
               >
-                {t('hero.cv')}
-                <Download className="ml-2 w-5 h-5" />
+                <a href="/Aminata-Yabre-CV.pdf" download>
+                  {t('hero.cv')}
+                  <Download className="ml-2 w-5 h-5" />
+                </a>
               </Button>
             </motion.div>
           </motion.div>

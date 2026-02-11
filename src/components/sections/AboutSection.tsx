@@ -10,7 +10,7 @@ const AboutSection = () => {
       icon: Network,
       title: t('skills.networks'),
       description: t('skills.networks.desc'),
-      technologies: ['Cisco', 'VLAN', 'OSPF', 'BGP', 'TCP/IP'],
+      technologies: ['Cisco', 'VLAN', 'OSPF', 'BGP', 'TCP/IP', 'IPV4/IPV6', 'DNS', 'GNS3'],
       color: 'from-primary to-primary/60',
     },
     {
@@ -24,7 +24,7 @@ const AboutSection = () => {
       icon: Server,
       title: t('skills.systems'),
       description: t('skills.systems.desc'),
-      technologies: ['Linux'],
+      technologies: ['Linux', 'Proxmox', 'Wireshark', 'Stormshield'],
       color: 'from-primary to-cyan',
     },
     {
@@ -37,7 +37,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-background">
+    <section id="about" className="py-24 bg-background overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -47,7 +47,7 @@ const AboutSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">{t('about.title')}</h2>
-          <p className="text-xl text-cyan font-medium">{t('about.subtitle')}</p>
+          {t('about.subtitle') && <p className="text-xl text-cyan font-medium">{t('about.subtitle')}</p>}
         </motion.div>
 
         <div className="max-w-4xl mx-auto mb-16">

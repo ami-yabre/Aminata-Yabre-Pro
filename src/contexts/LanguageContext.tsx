@@ -29,20 +29,20 @@ const translations = {
     
     // About
     'about.title': 'À propos',
-    'about.subtitle': 'Recherche d\'alternance',
+    'about.subtitle': '',
     'about.description': 'Étudiante en Réseaux et Télécommunications, passionnée par les systèmes informatiques et les réseaux. J\'ai acquis une première expérience en tant que technicienne réseaux lors d\'un stage en entreprise, où j\'ai travaillé sur le câblage, l\'installation et les tests de connectivité. Je recherche actuellement une alternance pour la rentrée de septembre 2026 afin de renforcer mes compétences techniques et professionnelles.',
     
     // Skills
     'skills.title': 'Compétences',
     'skills.subtitle': 'Mes domaines d\'expertise',
     'skills.networks': 'Réseaux',
-    'skills.networks.desc': 'Configuration de routeurs et switches, VLAN, protocoles de routage (OSPF, BGP)',
+    'skills.networks.desc': 'Topologies LAN, adressage IP, routage dynamique, segmentation VLAN et services réseau sécurisés pour les environnements d\'entreprise.',
     'skills.telecom': 'Télécommunications',
     'skills.telecom.desc': 'Transmission de données, fibre optique, technologies mobiles (4G/5G)',
     'skills.systems': 'Systèmes',
-    'skills.systems.desc': 'Administration Linux/Windows',
+    'skills.systems.desc': 'Déploiement de services sur Windows / Linux, virtualisation et sécurisation du trafic avec supervision et firewalls.',
     'skills.iot': 'Internet des Objets',
-    'skills.iot.desc': 'Arduino, Raspberry Pi, protocoles MQTT',
+    'skills.iot.desc': 'Chaînes IoT de bout en bout : capteurs, LoRaWAN privé, transport MQTT, stockage de séries temporelles et dashboards temps réel.',
     
     // Projects
     'projects.title': 'Projets',
@@ -86,20 +86,20 @@ const translations = {
     
     // About
     'about.title': 'About',
-    'about.subtitle': 'Looking for an Apprenticeship',
+    'about.subtitle': '',
     'about.description': 'Networks and Telecommunications student, passionate about IT systems and networks. I gained first-hand experience as a network technician during a company internship, where I worked on cabling, installation and connectivity testing. I am currently looking for an apprenticeship starting September 2026 to strengthen my technical and professional skills.',
     
     // Skills
     'skills.title': 'Skills',
     'skills.subtitle': 'My areas of expertise',
     'skills.networks': 'Networks',
-    'skills.networks.desc': 'Router and switch configuration, VLAN, routing protocols (OSPF, BGP)',
+    'skills.networks.desc': 'LAN topologies, IP addressing, dynamic routing, VLAN segmentation and secure network services for enterprise environments.',
     'skills.telecom': 'Telecommunications',
     'skills.telecom.desc': 'Data transmission, fiber optics, mobile technologies (4G/5G)',
     'skills.systems': 'Systems',
-    'skills.systems.desc': 'Linux/Windows administration',
+    'skills.systems.desc': 'Service deployment on Windows/Linux, virtualization and traffic security with monitoring and firewalls.',
     'skills.iot': 'Internet of Things',
-    'skills.iot.desc': 'Arduino, Raspberry Pi, MQTT protocols',
+    'skills.iot.desc': 'End-to-end IoT chains: sensors, private LoRaWAN, MQTT transport, time-series storage and real-time dashboards.',
     
     // Projects
     'projects.title': 'Projects',

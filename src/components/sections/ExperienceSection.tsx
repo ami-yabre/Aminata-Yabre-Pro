@@ -36,7 +36,7 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section id="experience" className="py-24 bg-secondary/30 overflow-hidden">
+    <section id="experience" className="py-24 bg-secondary overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

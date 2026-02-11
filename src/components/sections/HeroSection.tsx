@@ -26,7 +26,7 @@ const HeroSection = () => {
             rotate: [0, 180, 360],
           }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] rounded-full bg-cyan/10 blur-3xl"
+          className="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] rounded-full bg-primary/10 blur-3xl"
         />
         <motion.div
           animate={{ 
@@ -124,9 +124,18 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="text-lg text-cyan font-medium mb-10"
+              className="text-lg text-cyan font-medium mb-4"
             >
               {t('hero.subtitle')}
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.55 }}
+              className="text-base text-primary-foreground/70 mb-10 max-w-lg"
+            >
+              {t('hero.alternance')}
             </motion.p>
 
             <motion.div

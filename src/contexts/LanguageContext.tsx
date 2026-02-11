@@ -22,13 +22,14 @@ const translations = {
     
     // Hero
     'hero.name': 'Aminata YABRE',
-    'hero.title': 'Étudiante en BUT Réseaux & Télécommunications',
+    'hero.title': 'Étudiante en deuxième année de BUT Réseaux & Télécommunications',
     'hero.subtitle': 'Option Internet des Objets',
+    'hero.alternance': 'Je suis actuellement à la recherche d\'une alternance à partir de septembre 2026 dans le domaine des infrastructures réseaux, systèmes et télécommunications.',
     'hero.cta': 'Découvrir mon profil',
     'hero.cv': 'Télécharger CV',
     
     // About
-    'about.title': 'À propos',
+    'about.title': 'Qui suis-je ?',
     'about.subtitle': '',
     'about.description': 'Étudiante en Réseaux et Télécommunications, passionnée par les systèmes informatiques et les réseaux. J\'ai acquis une première expérience en tant que technicienne réseaux lors d\'un stage en entreprise, où j\'ai travaillé sur le câblage, l\'installation et les tests de connectivité. Je recherche actuellement une alternance pour la rentrée de septembre 2026 afin de renforcer mes compétences techniques et professionnelles.',
     
@@ -79,13 +80,14 @@ const translations = {
     
     // Hero
     'hero.name': 'Aminata YABRE',
-    'hero.title': 'Networks & Telecommunications Student',
+    'hero.title': 'Second-year Networks & Telecommunications Student',
     'hero.subtitle': 'Internet of Things Specialization',
+    'hero.alternance': 'I am currently looking for an apprenticeship starting September 2026 in the field of network infrastructure, systems and telecommunications.',
     'hero.cta': 'Discover my profile',
     'hero.cv': 'Download CV',
     
     // About
-    'about.title': 'About',
+    'about.title': 'Who am I?',
     'about.subtitle': '',
     'about.description': 'Networks and Telecommunications student, passionate about IT systems and networks. I gained first-hand experience as a network technician during a company internship, where I worked on cabling, installation and connectivity testing. I am currently looking for an apprenticeship starting September 2026 to strengthen my technical and professional skills.',
     

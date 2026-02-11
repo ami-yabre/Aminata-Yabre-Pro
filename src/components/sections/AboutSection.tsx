@@ -1,9 +1,20 @@
 import { motion } from 'framer-motion';
-import { Network, Radio, Server, Cpu } from 'lucide-react';
+import { Network, Radio, Server, Cpu, GraduationCap } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Button } from '@/components/ui/button';
+import heroPortrait from '@/assets/hero-portrait.png';
 
 const AboutSection = () => {
   const { t } = useLanguage();
+
+  const scrollToEducation = () => {
+    const el = document.querySelector('#education');
+    if (el) {
+      const headerHeight = 80;
+      const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: elementPosition - headerHeight, behavior: 'smooth' });
+    }
+  };
 
   const skills = [
     {
@@ -47,9 +58,9 @@ const AboutSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">{t('about.title')}</h2>
-          {t('about.subtitle') && <p className="text-xl text-cyan font-medium">{t('about.subtitle')}</p>}
         </motion.div>
 
+        {/* Photo + Description */}
         <div className="max-w-4xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -58,9 +69,31 @@ const AboutSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-card rounded-2xl p-8 md:p-12 shadow-card"
           >
-            <p className="text-lg text-foreground/80 leading-relaxed">
-              {t('about.description')}
-            </p>
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              {/* Round photo left */}
+              <div className="flex-shrink-0">
+                <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-cyan/40 shadow-glow">
+                  <img
+                    src={heroPortrait}
+                    alt="Aminata YABRE"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+              {/* Text right */}
+              <div className="flex-1 text-center md:text-left">
+                <p className="text-lg text-foreground/80 leading-relaxed mb-6">
+                  {t('about.description')}
+                </p>
+                <Button
+                  onClick={scrollToEducation}
+                  className="bg-cyan hover:bg-cyan-light text-navy font-semibold"
+                >
+                  <GraduationCap className="w-5 h-5 mr-2" />
+                  {t('education.title')}
+                </Button>
+              </div>
+            </div>
           </motion.div>
         </div>
 

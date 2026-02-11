@@ -42,7 +42,7 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 max-w-5xl mx-auto">
+        <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-10 md:gap-16 max-w-5xl mx-auto">
           
           {/* Magic Card */}
           <motion.div
@@ -53,8 +53,14 @@ const HeroSection = () => {
             onClick={() => setIsFlipped(!isFlipped)}
           >
             <motion.div
-              animate={{ rotateY: isFlipped ? 180 : 0 }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
+              animate={{ 
+                rotateY: isFlipped ? 180 : 0,
+                y: [0, -10, 0],
+              }}
+              transition={{ 
+                rotateY: { duration: 0.6, ease: "easeInOut" },
+                y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+              }}
               className="relative w-64 h-80 md:w-72 md:h-96"
               style={{ transformStyle: 'preserve-3d' }}
             >
@@ -140,7 +146,7 @@ const HeroSection = () => {
               <Button
                 size="lg"
                 asChild
-                className="bg-gradient-to-r from-primary to-cyan text-white font-semibold px-8 py-6 text-lg hover:opacity-90"
+                className="bg-cyan hover:bg-cyan-light text-navy font-semibold px-8 py-6 text-lg"
               >
                 <a href="/Aminata-Yabre-CV.pdf" download>
                   {t('hero.cv')}

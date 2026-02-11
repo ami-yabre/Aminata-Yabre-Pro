@@ -23,6 +23,7 @@ const ExperienceSection = () => {
     'Installation et mise en service d\'équipements informatiques',
     'Pose de goulottes pour une installation propre et sécurisée',
     'Brassage et organisation d\'armoires informatiques',
+    'Dépannage réseaux niveau 1 et 2',
   ] : [
     'Pulling and organizing IT and electrical cables',
     'Wiring of electrical outlets and RJ45',
@@ -31,10 +32,11 @@ const ExperienceSection = () => {
     'Installation and commissioning of IT equipment',
     'Installation of cable trays for clean and secure setup',
     'Patching and organizing IT cabinets',
+    'Network troubleshooting level 1 and 2',
   ];
 
   return (
-    <section id="experience" className="py-24 bg-secondary/30">
+    <section id="experience" className="py-24 bg-secondary/30 overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

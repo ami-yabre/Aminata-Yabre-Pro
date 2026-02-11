@@ -48,7 +48,7 @@ const GallerySection = () => {
   ];
 
   return (
-    <section id="gallery" className="py-24 bg-background">
+    <section id="gallery" className="py-24 bg-background overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

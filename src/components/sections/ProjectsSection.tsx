@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Award, ExternalLink } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import minecraftIotImage from '@/assets/minecraft-iot.png';
 import appCommunicanteImage from '@/assets/app-communicante.jpg';
 
@@ -89,6 +91,78 @@ const ProjectsSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Certifications */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-20"
+        >
+          <h3 className="text-3xl md:text-4xl font-bold text-center mb-10">
+            Certifications
+          </h3>
+
+          <div className="max-w-4xl mx-auto bg-card rounded-2xl p-8 md:p-10 shadow-card">
+            <div className="flex flex-col md:flex-row gap-8 items-start">
+              <div className="flex-shrink-0 flex flex-col items-center gap-3">
+                <div className="p-5 rounded-2xl bg-gradient-to-br from-primary to-cyan">
+                  <Award className="w-16 h-16 text-white" />
+                </div>
+                <span className="text-sm font-semibold text-primary">Cisco</span>
+              </div>
+
+              <div className="flex-1">
+                <h4 className="text-xl font-bold mb-2">
+                  CCNA : Enterprise Networking, Security & Automation
+                </h4>
+                <p className="text-primary font-medium mb-4">
+                  {language === 'fr' ? 'Délivré par Cisco Networking Academy' : 'Issued by Cisco Networking Academy'}
+                </p>
+                <p className="text-foreground/80 leading-relaxed mb-4">
+                  {language === 'fr'
+                    ? "Certification axée sur l'architecture des réseaux d'entreprise, la sécurité et les premiers concepts d'automatisation. Réalisation de nombreux labs sur Cisco Packet Tracer pour concevoir, configurer et dépanner des réseaux multi-sites."
+                    : "Certification focused on enterprise network architecture, security and early automation concepts. Completed numerous labs on Cisco Packet Tracer to design, configure and troubleshoot multi-site networks."}
+                </p>
+                <h5 className="font-semibold mb-3">
+                  {language === 'fr' ? 'Compétences approfondies :' : 'In-depth skills:'}
+                </h5>
+                <ul className="space-y-2 text-sm text-foreground/80 mb-6">
+                  <li className="flex items-start gap-2">
+                    <span className="text-cyan mt-1">•</span>
+                    {language === 'fr' ? 'Routage OSPF avancé et scénarios multi-zone' : 'Advanced OSPF routing and multi-area scenarios'}
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-cyan mt-1">•</span>
+                    {language === 'fr' ? "NAT, QoS et connectivité WAN pour réseaux d'entreprise" : 'NAT, QoS and WAN connectivity for enterprise networks'}
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-cyan mt-1">•</span>
+                    {language === 'fr' ? 'Principes de sécurité réseau et mitigation des menaces' : 'Network security principles and threat mitigation'}
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-cyan mt-1">•</span>
+                    {language === 'fr' ? 'Architectures WAN et virtualisation des réseaux' : 'WAN architectures and network virtualization'}
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-cyan mt-1">•</span>
+                    {language === 'fr' ? "Bases de l'automatisation et de la programmabilité réseau" : 'Network automation and programmability basics'}
+                  </li>
+                </ul>
+                <Button
+                  asChild
+                  className="bg-cyan hover:bg-cyan-light text-navy font-semibold"
+                >
+                  <a href="/CCNA-certificate.pdf" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-4 h-4" />
+                    {language === 'fr' ? 'Voir le certificat' : 'View certificate'}
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

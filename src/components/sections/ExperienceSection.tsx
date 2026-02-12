@@ -9,6 +9,7 @@ import experienceCablage2 from '@/assets/experience-cablage-2.jpg';
 import experienceCablage3 from '@/assets/experience-cablage-3.jpg';
 import experienceCablage4 from '@/assets/experience-cablage-4.jpg';
 import experienceSecurite1 from '@/assets/experience-securite-1.jpg';
+import experienceControleAcces1 from '@/assets/experience-controle-acces-1.jpg';
 import experienceChantier1 from '@/assets/experience-chantier-1.jpg';
 
 const ExperienceSection = () => {
@@ -207,29 +208,37 @@ const ExperienceSection = () => {
               </div>
             </div>
 
-            {/* Sécurité informatique - image LEFT, text RIGHT */}
+            {/* Sécurité informatique - images LEFT, text RIGHT */}
             <div className="mt-8">
               <h4 className="font-semibold mb-4 text-lg">
                 {language === 'fr' ? 'Sécurité informatique' : 'IT Security'}
               </h4>
               <div className="flex flex-col md:flex-row gap-6 items-start">
-                <div className="flex-1">
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4 }}
-                    className="rounded-xl overflow-hidden cursor-pointer"
-                    onClick={() => setSelectedImage(experienceSecurite1)}
-                  >
-                    <img src={experienceSecurite1} alt="Dépannage caméra IP" className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300" />
-                  </motion.div>
+                <div className="flex-1 grid grid-cols-2 gap-3">
+                  {[experienceSecurite1, experienceControleAcces1].map((img, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: i * 0.1 }}
+                      className="rounded-xl overflow-hidden cursor-pointer"
+                      onClick={() => setSelectedImage(img)}
+                    >
+                      <img src={img} alt={i === 0 ? "Dépannage caméra IP" : "Câblage armoire contrôle d'accès"} className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300" />
+                    </motion.div>
+                  ))}
                 </div>
                 <div className="flex-1">
-                  <p className="text-foreground/80 leading-relaxed">
+                  <p className="text-foreground/80 leading-relaxed mb-4">
                     {language === 'fr'
                       ? "Dans mon stage je ne faisais pas que du câblage réseau mais un peu de sécurité informatique. Ici, je procédais au dépannage et à la configuration de caméras IP afin de rétablir leur fonctionnement et la connexion au réseau."
                       : "During my internship, I didn't only do network cabling but also some IT security work. Here, I was troubleshooting and configuring IP cameras to restore their operation and network connection."}
+                  </p>
+                  <p className="text-foreground/80 leading-relaxed">
+                    {language === 'fr'
+                      ? "Réalisation du câblage d'une armoire de contrôle d'accès dans le cadre de l'installation de ventouses électromagnétiques et de boutons poussoirs au sein d'une entreprise. Raccordement des équipements, organisation du câblage et vérification du bon fonctionnement du système afin d'assurer la fiabilité et la sécurité de l'installation."
+                      : "Wiring of an access control cabinet as part of the installation of electromagnetic locks and push buttons within a company. Equipment connection, cable organization and system functionality verification to ensure the reliability and security of the installation."}
                   </p>
                 </div>
               </div>

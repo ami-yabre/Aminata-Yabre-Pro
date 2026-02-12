@@ -19,8 +19,8 @@ const Header = () => {
 
   const navItems = [
     { key: 'nav.about', href: '#about' },
-    { key: 'nav.experience', href: '#experience' },
     { key: 'nav.portfolio', href: '#projects' },
+    { key: 'nav.experience', href: '#experience' },
     { key: 'nav.contact', href: '#contact' },
   ];
 

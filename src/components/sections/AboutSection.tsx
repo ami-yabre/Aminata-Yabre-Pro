@@ -55,9 +55,16 @@ const AboutSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="flex items-center justify-between mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">{t('about.title')}</h2>
+          <h2 className="text-4xl md:text-5xl font-bold">{t('about.title')}</h2>
+          <Button
+            onClick={scrollToEducation}
+            className="bg-cyan hover:bg-cyan-light text-navy font-semibold"
+          >
+            <GraduationCap className="w-5 h-5 mr-2" />
+            {t('education.title')}
+          </Button>
         </motion.div>
 
         {/* Photo + Description */}
@@ -82,16 +89,9 @@ const AboutSection = () => {
               </div>
               {/* Text right */}
               <div className="flex-1 text-center md:text-left">
-                <p className="text-lg text-foreground/80 leading-relaxed mb-6">
+                <p className="text-lg text-foreground/80 leading-relaxed">
                   {t('about.description')}
                 </p>
-                <Button
-                  onClick={scrollToEducation}
-                  className="bg-cyan hover:bg-cyan-light text-navy font-semibold"
-                >
-                  <GraduationCap className="w-5 h-5 mr-2" />
-                  {t('education.title')}
-                </Button>
               </div>
             </div>
           </motion.div>

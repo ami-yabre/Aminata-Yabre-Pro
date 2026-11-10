@@ -32,7 +32,7 @@ const ContactSection = () => {
     { icon: Mail, label: 'yabreami5418@gmail.com', href: 'mailto:yabreami5418@gmail.com' },
     { icon: Phone, label: '+33 6 52 76 67 95', href: 'tel:+33652766795' },
     { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com' },
-    { icon: Github, label: 'GitHub', href: 'https://github.com' },
+    { icon: Github, label: 'GitHub', href: 'https://github.com/ami-yabre' },
   ];
 
   return (

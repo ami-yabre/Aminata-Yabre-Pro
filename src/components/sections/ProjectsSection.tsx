@@ -4,11 +4,51 @@ import { Award, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import minecraftIotImage from '@/assets/minecraft-iot.png';
 import appCommunicanteImage from '@/assets/app-communicante.jpg';
+import sdrImage from '@/assets/sdr-architecture.png';
+import hopitalImage from '@/assets/hopital-influxdb.png';
+
+type ProjectLink = { label: string; href: string };
 
 const ProjectsSection = () => {
   const { t, language } = useLanguage();
 
-  const projects = [
+  const projects: {
+    title: string;
+    description: string;
+    technologies: string[];
+    type: string;
+    image?: string;
+    links?: ProjectLink[];
+  }[] = [
+    {
+      title: language === 'fr'
+        ? 'Détection et localisation d\'émetteurs radio avec une SDR'
+        : 'Radio Emitter Detection and Localization with an SDR',
+      description: language === 'fr'
+        ? 'Système complet de détection d\'émetteurs radio inconnus, dans un scénario de secours en montagne. Une radio logicielle USRP B200mini et GNU Radio analysent le spectre ; un bloc Python mesure la fréquence centrale, la largeur de bande (sans table préétablie), la puissance reçue et la durée d\'émission. Les trois émetteurs LoRa à 868 MHz construits sur Arduino ont été détectés, et les résultats sont transmis en UDP puis affichés sur une carte web.'
+        : 'Complete system for detecting unknown radio emitters in a mountain-rescue scenario. A USRP B200mini software-defined radio and GNU Radio analyze the spectrum; a custom Python block measures center frequency, bandwidth (with no pre-defined lookup table), received power and transmission duration. All three Arduino-based 868 MHz LoRa emitters were detected, and results are sent over UDP and displayed on a web map.',
+      technologies: ['SDR', 'GNU Radio', 'Python', 'LoRa 868 MHz', 'UDP', 'Arduino'],
+      type: language === 'fr' ? 'Stage – DigiChrone (2026)' : 'Internship – DigiChrone (2026)',
+      image: sdrImage,
+      links: [
+        { label: language === 'fr' ? 'Code sur GitHub' : 'Code on GitHub', href: 'https://github.com/ami-yabre/sdr-project' },
+      ],
+    },
+    {
+      title: language === 'fr'
+        ? 'Hôpital de campagne : contrôle d\'accès par badge et supervision'
+        : 'Field Hospital: Badge Access Control and Monitoring',
+      description: language === 'fr'
+        ? 'Chaîne IoT de contrôle d\'accès par badge pour un hôpital de campagne : lecteur ESP32 + PN532, transport MQTT (Mosquitto), décision d\'accès dans Node-RED et supervision temps réel avec InfluxDB. J\'ai réalisé la partie MQTT et sécurité : règles de décision, détection d\'anomalies (force brute, badge inconnu, accès non autorisé, seuils de température et d\'humidité) et capteurs simulés. Déploiement avec Docker Compose.'
+        : 'IoT badge access-control chain for a field hospital: ESP32 + PN532 reader, MQTT transport (Mosquitto), access decisions in Node-RED and real-time monitoring with InfluxDB. I built the MQTT and security part: decision rules, anomaly detection (brute force, unknown badge, unauthorized access, temperature and humidity thresholds) and simulated sensors. Deployed with Docker Compose.',
+      technologies: ['ESP32', 'MQTT', 'Node-RED', 'InfluxDB', 'Docker', 'Sécurité IoT'],
+      type: language === 'fr' ? 'Projet académique (SAE)' : 'Academic Project (SAE)',
+      image: hopitalImage,
+      links: [
+        { label: language === 'fr' ? 'Code sur GitHub' : 'Code on GitHub', href: 'https://github.com/ami-yabre/sae-hopital-campagne' },
+        { label: language === 'fr' ? 'Vidéo de démonstration' : 'Demo video', href: 'https://youtu.be/m2cwiAwQjhk' },
+      ],
+    },
     {
       title: language === 'fr' ? 'Développer une application communicante' : 'Developing a Communicating Application',
       description: language === 'fr' 
@@ -87,6 +127,23 @@ const ProjectsSection = () => {
                     </span>
                   ))}
                 </div>
+
+                {project.links && project.links.length > 0 && (
+                  <div className="flex flex-wrap gap-4 mt-5">
+                    {project.links.map((link) => (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
